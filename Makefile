@@ -14,7 +14,7 @@ levenshtein:
 	cc -c src/levenshtein.c -o tmp/levenshtein.o
 
 clean:
-	rm bin/dist tmp/*.o
+	rm bin/* tmp/*.o
 
 tests: prep hamming levenshtein
 	cc tmp/*.o test/hamming_test.c -o bin/test && bin/test

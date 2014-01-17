@@ -16,6 +16,7 @@
  */
 #include <stdio.h>
 #include <string.h>
+#include "../include/hamming.h"
 
 void usage()
 {
@@ -45,6 +46,7 @@ int main(int argc, char *argv[])
 
 
     if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--hamming") == 0) {
+        printf("%d\n", hamming_dist(argv[2], argv[3]));
     }
 
     if (strcmp(argv[1], "-l") == 0 || strcmp(argv[1], "--levenshtein") == 0) {

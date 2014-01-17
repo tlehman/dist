@@ -15,6 +15,7 @@
     along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
 
+#include <string.h>
 #include "../include/hamming.h"
 
  /*** hamming_dist(str1, str2) is a non-negative integer value that counts
@@ -25,5 +26,17 @@
   */
 int hamming_dist(const char * str1, const char * str2)
 {
-    return -1;
+    if(strlen(str1) != strlen(str2)) return -1;
+    if(strcmp(str1, str2) == 0)      return 0;
+
+    int dist = 0;
+    int i = 0;
+    int n = strlen(str1);
+
+    for(i = 0; i < n; ++i) {
+        if(str1[i] != str2[i]) ++dist;
+    }
+
+    return dist;
 }
+
