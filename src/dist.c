@@ -14,7 +14,7 @@ void usage()
 void help()
 {
     printf("dist: compute distances between strings\n");
-    printf("  -h --hamming\tHamming Distance\n");
+    printf("  -h --hamming\t\tHamming Distance\n");
     printf("  -l --levenshtein\tLevenshtein Distance\n");
 }
 
