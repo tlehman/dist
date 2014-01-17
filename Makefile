@@ -4,7 +4,6 @@ prep:
 	if [ -d bin ]; then echo '' > /dev/null; else mkdir bin; fi
 	if [ -d tmp ]; then echo '' > /dev/null; else mkdir tmp; fi
 
-
 dist: prep hamming levenshtein
 	cc tmp/*.o src/dist.c -o bin/dist
 
@@ -16,3 +15,6 @@ levenshtein:
 
 clean:
 	rm bin/dist tmp/*.o
+
+tests: prep hamming levenshtein
+	cc tmp/*.o test/hamming_test.c -o bin/test && bin/test
