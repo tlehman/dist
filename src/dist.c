@@ -1,4 +1,5 @@
 /** dist: compute distances between strings
+    by tlehman at 1389927665
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -14,6 +15,7 @@
     along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
 #include <stdio.h>
+#include <string.h>
 
 void usage()
 {
@@ -29,8 +31,21 @@ void help()
 
 int main(int argc, char *argv[])
 {
+    if (argc == 1) return 1;
 
-    help();
+    if (strcmp(argv[1], "--help") == 0) help();
+
+    if (argc != 4) {
+        usage();
+        return -1;
+    }
+
+
+    if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--hamming") == 0) {
+    }
+
+    if (strcmp(argv[1], "-l") == 0 || strcmp(argv[1], "--levenshtein") == 0) {
+    }
     return 0;
 }
 
