@@ -17,4 +17,4 @@ clean:
 	rm bin/* tmp/*.o
 
 tests: prep hamming levenshtein
-	cc tmp/*.o test/hamming_test.c -o bin/test && bin/test
+	cc tmp/*.o test/levenshtein_test.c -o bin/test && bin/test
