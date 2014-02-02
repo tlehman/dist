@@ -1,7 +1,6 @@
 #include <assert.h>
 #include "../include/levenshtein.h"
 
-
 int main(int argc, char *argv[])
 {
     // Distance between identical strings is zero
@@ -26,3 +25,4 @@ int main(int argc, char *argv[])
  
     return 0;
 }
+
