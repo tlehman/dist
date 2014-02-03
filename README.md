@@ -18,12 +18,16 @@ The most straightforward way to derive the formula for Levenshtein distance is u
 
 Let u=u<sub>1</sub>u<sub>2</sub>...u<sub>m</sub>, v=v<sub>1</sub>v<sub>2</sub>...v<sub>n</sub>, we wish to find the formula for the Levenshtein distance d(u,v)
 
- - If min(m,n) = 0, then max(len(m), len(n)). (This is obvious, since if one string is empty, then the distance is just the number of additions to get from the empty string to the non-empty string)
+ 1. If min(m,n) = 0, then max(len(m), len(n)). (This is obvious, since if one string is empty, then the distance is just the number of additions to get from the empty string to the non-empty string)
  - If the last two characters are the same, that is: u<sub>m</sub> = v<sub>n</sub>, then d(u,v)=d(u<sub>1</sub>u<sub>2</sub>...u<sub>m-1</sub>, v<sub>1</sub>v<sub>2</sub>...v<sub>n-1</sub>)
  - Otherwise, there are three options left to check, compute them all and pick the minimum:
    - Delete u<sub>m</sub> and recurse
    - Delete v<sub>n</sub> and recurse or
    - Delete both and recurse
   
-Why does this last step work?
+Why does this last case work?
+
+By the last case, we know that both strings are non-empty, and that their last characters differ. This means that we can delete the last character of one or the other or both, counting the deletion as one, and recurse until either of the first two cases are met.
+
+To see this in action, suppose we are testing "solve" and "resolve", we know that we can append two characters to the former to get the latter. Using our algorithm, we know that they are both non-empty, and we will hit case 2 exactly five times, at which point we test "" and "re", which case 1 returns a distance of 2.
 
