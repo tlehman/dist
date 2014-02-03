@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <stdio.h>
 #include "../include/levenshtein.h"
 
 int main(int argc, char *argv[])
