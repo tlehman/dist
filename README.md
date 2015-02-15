@@ -31,3 +31,6 @@ By the last case, we know that both strings are non-empty, and that their last c
 
 To see this in action, suppose we are testing "solve" and "resolve", we know that we can append two characters to the former to get the latter. Using our algorithm, we know that they are both non-empty, and we will hit case 2 exactly five times, at which point we test "" and "re", which case 1 returns a distance of 2.
 
+From Ch3 (MMDS):
+
+> The edit distance d(x,y) can be calculated as the length of x plus the length of y minus twice the length of their LCS.
