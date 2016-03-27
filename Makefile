@@ -5,16 +5,16 @@ prep:
 	if [ -d tmp ]; then echo '' > /dev/null; else mkdir tmp; fi
 
 dist: prep hamming levenshtein
-	cc tmp/*.o src/dist.c -o bin/dist
+	gcc -g tmp/*.o src/dist.c -o bin/dist
 
 hamming:
-	cc -c src/hamming.c -o tmp/hamming.o
+	gcc -c -g src/hamming.c -o tmp/hamming.o
 
 levenshtein:
-	cc -c src/levenshtein.c -o tmp/levenshtein.o
+	gcc -c -g src/levenshtein.c -o tmp/levenshtein.o
 
 clean:
 	rm bin/* tmp/*.o
 
 tests: prep hamming levenshtein
-	cc tmp/*.o test/levenshtein_test.c -o bin/test && bin/test
+	gcc tmp/*.o test/levenshtein_test.c -o bin/test && bin/test
